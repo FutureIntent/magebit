@@ -1,4 +1,231 @@
 .background {
+    min-width: 100%;
+    max-width: 100%;
     min-height: 100vh;
     max-height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.column_1 {
+    min-width: 40%;
+    max-width: 40%;
+    min-height: 100vh;
+    max-height: 100vh;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.column_2 {
+    min-width: 60%;
+    max-width: 60%;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-image: url(../assets/image_summer.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-top: 10%;
+    height: 5%;
+}
+
+.logo_bar {
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.nav_bar {
+    width: 70%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.logo_image {
+    content: url(../assets/Union.png);
+}
+
+.logo_image:hover {
+    content: url(../assets/Union_hover.png);
+}
+
+.logo_text {
+    margin-left: 10%;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    color: #131821;
+}
+
+.logo_text:hover {
+    text-shadow: 0px 0px 2px #1DA1F2;
+}
+
+.nav_text {
+        text-decoration: none;
+        margin-left: 5%;
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        color: #6A707B;
+    }
+
+    .nav_text:hover {
+        color: #4066A5;
+        text-decoration: underline #4066A5;
+    }
+
+    .nav_text:active {
+        color: #233759;
+        text-decoration: underline #233759;
+    }
+
+.mid_section {
+    display: flex;
+    flex-direction:column;
+    margin-top:20%;
+    align-items: center;
+}
+
+.mid_header {
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    color: #131821;
+    align-self: flex-start;
+    margin-left: 10%;
+}
+
+.mid_paragraph {
+    width: 80%;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 175%;
+    color: #6A707B;
+    overflow-wrap: break-word;
+    align-self: flex-start;
+    margin-left: 10%;
+}
+
+.mid_input {
+    width: 150%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 5%;
+    background: #FFFFFF;
+    border: 1px solid #E3E3E4;
+    box-sizing: border-box;
+    margin-top: 5%;
+    align-self: flex-start;
+    background-image: url(../assets/ic_arrow.svg);
+    background-repeat: no-repeat;
+    background-position: 95%;
+    border-left: 4px solid #4066A5;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #6A707B;
+}
+
+    .mid_input:hover {
+        border: 1px solid #4066A5;
+        box-sizing: border-box;
+        box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+        border-left: 4px solid #4066A5;
+        background-image: url(../assets/ic_arrow_blue.svg);
+    }
+
+    .mid_input:focus {
+        outline: none;
+        background: #FFFFFF;
+        border: 1px solid #E3E3E4;
+        box-sizing: border-box;
+        box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+        border-left: 4px solid #4066A5;
+        background-image: url(../assets/ic_arrow.svg);
+        background-repeat: no-repeat;
+        background-position: 95%;
+        border-left: 4px solid #4066A5;
+    }
+
+.mid_agreement {
+    width: 100%;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+}
+
+.mid_checkbox {
+    background: #FFFFFF;
+    border: 1px solid #E3E3E4;
+    box-sizing: border-box;
+    border-radius: 3px;
+    margin-left: 20%;
+    transform: scale(2);
+}
+
+.mid_agreement_text {
+    margin-left: 5%;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 175%;
+    color: #6A707B;
+}
+
+.mid_agreement_text_link {
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 175%;
+    text-decoration-line: underline;
+    color: #131821;
+}
+
+    .mid_agreement_text_link:hover {
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 175%;
+        text-decoration-line: underline;
+        color: #4066A5;
+    }
+
+    .mid_agreement_text_link:active {
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 175%;
+        text-decoration-line: underline;
+        color: #233759;
+    }
+
+        .mid_checkbox:checked {
+            background: #4066A5;
+            border-radius: 3px;
+        }
+
+.mid_line {
+    margin-top: 10%;
+    background: #E3E3E4;
+    width: 80%;
 }
