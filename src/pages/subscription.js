@@ -20,6 +20,7 @@ function Subscription() {
 						<a className={styles.nav_text} href="#">Contact</a>
 					</div>
 				</div>
+				<div className={ styles.mid_wrapper}>
 				<div className={styles.mid_section}>
 					<h1 className={ styles.mid_header }>
 						Subscribe to newsletter
@@ -32,7 +33,14 @@ function Subscription() {
 						<input type="checkbox" className={styles.mid_checkbox} />
 						<span className={styles.mid_agreement_text}>I agree to <a href="#" className={styles.mid_agreement_text_link}>terms of service</a></span>
 					</div>
-					<hr className={ styles.mid_line }/>
+					<hr className={styles.mid_line} />
+					<div className={styles.mid_icons}>
+						<a href="#" className={styles.mid_icons_fb}/>
+						<a href="#" className={styles.mid_icons_inst}/>
+						<a href="#" className={styles.mid_icons_twit}/>
+						<a href="#" className={styles.mid_icons_yt}/>
+					</div>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,3 +1,4 @@
+/* medium-large, large, extra large (HD screens, full HD screens, ultra HD) */
 .background {
     min-width: 100%;
     max-width: 100%;
@@ -54,9 +55,9 @@
     content: url(../assets/Union.png);
 }
 
-.logo_image:hover {
-    content: url(../assets/Union_hover.png);
-}
+    .logo_image:hover {
+        content: url(../assets/Union_hover.png);
+    }
 
 .logo_text {
     margin-left: 10%;
@@ -67,19 +68,19 @@
     color: #131821;
 }
 
-.logo_text:hover {
-    text-shadow: 0px 0px 2px #1DA1F2;
-}
+    .logo_text:hover {
+        text-shadow: 0px 0px 2px #1DA1F2;
+    }
 
 .nav_text {
-        text-decoration: none;
-        margin-left: 5%;
-        font-family: Arial;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        color: #6A707B;
-    }
+    text-decoration: none;
+    margin-left: 5%;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #6A707B;
+}
 
     .nav_text:hover {
         color: #4066A5;
@@ -91,10 +92,13 @@
         text-decoration: underline #233759;
     }
 
+.mid_wrapper {
+    margin-top: 25%;
+}
+
 .mid_section {
     display: flex;
-    flex-direction:column;
-    margin-top:20%;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -122,16 +126,16 @@
 }
 
 .mid_input {
-    width: 150%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    width: 140%;
+    padding-top: 4%;
+    padding-bottom: 4%;
     padding-left: 5%;
     background: #FFFFFF;
     border: 1px solid #E3E3E4;
     box-sizing: border-box;
     margin-top: 5%;
     align-self: flex-start;
-    background-image: url(../assets/ic_arrow.svg);
+    background-image: url(../assets/ic_arrow.png);
     background-repeat: no-repeat;
     background-position: 95%;
     border-left: 4px solid #4066A5;
@@ -139,6 +143,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
+    line-height: 150%;
     color: #6A707B;
 }
 
@@ -147,7 +152,13 @@
         box-sizing: border-box;
         box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
         border-left: 4px solid #4066A5;
-        background-image: url(../assets/ic_arrow_blue.svg);
+        background-image: url(../assets/ic_arrow_hover.png);
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 150%;
+        color: #131821;
     }
 
     .mid_input:focus {
@@ -157,7 +168,7 @@
         box-sizing: border-box;
         box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
         border-left: 4px solid #4066A5;
-        background-image: url(../assets/ic_arrow.svg);
+        background-image: url(../assets/ic_arrow.png);
         background-repeat: no-repeat;
         background-position: 95%;
         border-left: 4px solid #4066A5;
@@ -168,6 +179,8 @@
     margin-top: 10%;
     display: flex;
     flex-direction: row;
+    align-self: flex-start;
+    margin-left: 10%;
 }
 
 .mid_checkbox {
@@ -175,9 +188,13 @@
     border: 1px solid #E3E3E4;
     box-sizing: border-box;
     border-radius: 3px;
-    margin-left: 20%;
     transform: scale(2);
 }
+
+    .mid_checkbox:checked {
+        background: #4066A5;
+        border-radius: 3px;
+    }
 
 .mid_agreement_text {
     margin-left: 5%;
@@ -200,32 +217,437 @@
 }
 
     .mid_agreement_text_link:hover {
-        font-family: Arial;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 175%;
-        text-decoration-line: underline;
         color: #4066A5;
     }
 
     .mid_agreement_text_link:active {
+        color: #233759;
+    }
+
+.mid_line {
+    margin-top: 10%;
+    border: 1px solid #E3E3E4;
+    width: 80%;
+}
+
+.mid_icons {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-evenly;
+    margin-top: 5%;
+}
+
+.mid_icons_fb {
+    border: 2px solid #E3E3E4;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url(../assets/ic_facebook.png) center no-repeat;
+}
+
+    .mid_icons_fb:hover {
+        background: #4267B2;
+        box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+        background-image: url(../assets/ic_facebook_hover.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .mid_icons_fb:active {
+        background: #2F4A80;
+        box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+        background-image: url(../assets/ic_facebook_hover.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+.mid_icons_inst {
+    border: 2px solid #E3E3E4;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url(../assets/ic_instagram.png) center no-repeat;
+}
+
+    .mid_icons_inst:hover {
+        background: #C13584;
+        box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+        background-image: url(../assets/ic_instagram_hover.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .mid_icons_inst:active {
+        background: #8F2762;
+        box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+        background-image: url(../assets/ic_instagram_hover.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+.mid_icons_twit {
+    border: 2px solid #E3E3E4;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url(../assets/ic_twitter.png) center no-repeat;
+}
+
+    .mid_icons_twit:hover {
+        background: #1DA1F2;
+        box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+        background-image: url(../assets/ic_twitter_hover.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .mid_icons_twit:active {
+        background: #177FBF;
+        box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+        background-image: url(../assets/ic_twitter_hover.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+.mid_icons_yt {
+    display: inline;
+    border: 2px solid #E3E3E4;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url(../assets/ic_youtube.png) center no-repeat;
+}
+
+    .mid_icons_yt:hover {
+        background: #FF0000;
+        box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+        background-image: url(../assets/ic_youtube_hover.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .mid_icons_yt:active {
+        background: #780000;
+        box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+        background-image: url(../assets/ic_youtube_hover.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+/* extra small (portrait phones) */
+@media only screen and (max-width: 600px) {
+
+    .background {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        max-height: 100vh;
+        display: flex;
+    }
+
+
+    .column_1 {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        max-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .column_2 {
+        display: none;
+    }
+
+    .logo_bar {
+        width: 10%;
+    }
+
+    .nav_bar {
+        width: 90%
+    }
+
+    .header {
+        min-width: 90%;
+        max-width: 90%;
+        height: 7vh;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        align-items: center;
+    }
+
+
+    .logo_text {
+        display: none;
+    }
+
+    .nav_text {
+        margin-left: 10%;
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 171%;
+        color: #6A707B;
+    }
+
+    .mid_wrapper {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        max-height: 100vh;
+        margin-top: 0%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(../assets/image_summer.png);
+        background-position: 50% 100%;
+    }
+
+    .mid_header {
+        font-family: Georgia;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 142%;
+        color: #131821;
+        margin-left: 5%;
+        margin-top: 10%;
+    }
+
+    .mid_paragraph {
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 186%;
+        color: #6A707B;
+        margin-left: 5%;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
+
+    .mid_section {
+        width: 90%;
+        background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
+    }
+
+    .mid_agreement_text {
         font-family: Arial;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
         line-height: 175%;
-        text-decoration-line: underline;
-        color: #233759;
+        color: #6A707B;
     }
 
-        .mid_checkbox:checked {
-            background: #4066A5;
-            border-radius: 3px;
-        }
+    .mid_input {
+        width: 90%;
+        align-self: center;
+    }
 
-.mid_line {
-    margin-top: 10%;
-    background: #E3E3E4;
-    width: 80%;
+    .mid_agreement {
+        margin-top: 5%;
+        margin-bottom: 0%;
+        width: 100%;
+        margin-left: 6%;
+    }
+
+    .mid_line {
+        margin-top: 5%;
+        width: 90%;
+    }
+
+    .mid_icons {
+        width: 80%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    .mid_icons_fb {
+        width: 50px;
+        height: 50px;
+    }
+
+    .mid_icons_inst {
+        width: 50px;
+        height: 50px;
+    }
+
+    .mid_icons_twit {
+        width: 50px;
+        height: 50px;
+    }
+
+    .mid_icons_yt {
+        width: 50px;
+        height: 50px;
+    }
 }
+
+/* shortcut from medium devices (laptops/small desktops), small-medium(large tablets, landscape phones), small (portrait tablets and large phones) to extra small devices (phones) */
+@media only screen and (max-width: 1200px) and (min-width: 601px) {
+
+    .background {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        max-height: 100vh;
+        display: flex;
+    }
+
+
+    .column_1 {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        max-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .column_2 {
+        display: none;
+    }
+
+    .logo_bar {
+        width: 10%;
+    }
+
+    .nav_bar {
+        width: 90%
+    }
+
+    .header {
+        min-width: 95%;
+        max-width: 95%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        align-items: center;
+    }
+
+
+    .logo_text {
+        display: none;
+    }
+
+    .nav_text {
+        margin-left: 10%;
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 171%;
+        color: #6A707B;
+    }
+
+    .mid_wrapper {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        max-height: 100vh;
+        margin-top: 0%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(../assets/image_summer.png);
+        background-repeat: no-repeat;
+        object-fit: cover;
+    }
+
+    .mid_header {
+        font-family: Georgia;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 142%;
+        color: #131821;
+        margin-left: 5%;
+        margin-top: 3%;
+    }
+
+    .mid_paragraph {
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 186%;
+        color: #6A707B;
+        margin-left: 5%;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
+
+    .mid_section {
+        width: 90%;
+        border-radius: 15px;
+        background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
+    }
+
+    .mid_agreement_text {
+        font-family: Arial;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 175%;
+        margin-left: 2%;
+        color: #6A707B;
+    }
+
+    .mid_input {
+        width: 90%;
+        align-self: center;
+        margin-top: 1%;
+        padding-top:2%;
+        padding-bottom:2%;
+    }
+
+    .mid_agreement {
+        margin-top: 2%;
+        margin-bottom: 0%;
+        width: 100%;
+        margin-left: 6%;
+    }
+
+    .mid_line {
+        margin-top: 1%;
+        margin-bottom: 1%;
+        width: 90%;
+    }
+
+    .mid_icons {
+        width: 80%;
+        margin-top: 1%;
+        margin-bottom: 2%;
+    }
+
+    .mid_icons_fb {
+        width: 60px;
+        height: 60px;
+    }
+
+    .mid_icons_inst {
+        width: 60px;
+        height: 60px;
+    }
+
+    .mid_icons_twit {
+        width: 60px;
+        height: 60px;
+    }
+
+    .mid_icons_yt {
+        width: 60px;
+        height: 60px;
+    }
+ 
+}
+
+
+
+
