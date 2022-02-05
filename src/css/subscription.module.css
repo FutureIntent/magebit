@@ -1,4 +1,4 @@
-/* medium-large, large, extra large (HD screens, full HD screens, ultra HD) */
+/* medium-large, large, extra large (desktop HD screens, desktop full HD screens, wide ultra HD) */
 .background {
     min-width: 100%;
     max-width: 100%;
@@ -94,12 +94,19 @@
 
 .mid_wrapper {
     margin-top: 25%;
+    background-size: cover;
 }
 
 .mid_section {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.mid_prize {
+    content: url(../assets/Prize.png);
+    align-self: flex-start;
+    margin-left: 10%;
 }
 
 .mid_header {
@@ -125,19 +132,22 @@
     margin-left: 10%;
 }
 
-.mid_input {
+.mid_inputArea {
+    display: flex;
+    flex-direction: row;
     width: 140%;
-    padding-top: 4%;
-    padding-bottom: 4%;
+    align-self: flex-start;
+    margin-top: 5%;
+}
+
+.mid_input {
+    width: 90%;
+    padding-top: 3%;
+    padding-bottom: 3%;
     padding-left: 5%;
     background: #FFFFFF;
     border: 1px solid #E3E3E4;
     box-sizing: border-box;
-    margin-top: 5%;
-    align-self: flex-start;
-    background-image: url(../assets/ic_arrow.png);
-    background-repeat: no-repeat;
-    background-position: 95%;
     border-left: 4px solid #4066A5;
     font-family: Arial;
     font-style: normal;
@@ -145,41 +155,99 @@
     font-size: 16px;
     line-height: 150%;
     color: #6A707B;
+    border-right: none;
 }
 
-    .mid_input:hover {
-        border: 1px solid #4066A5;
-        box-sizing: border-box;
-        box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
-        border-left: 4px solid #4066A5;
-        background-image: url(../assets/ic_arrow_hover.png);
-        font-family: Arial;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 150%;
-        color: #131821;
-    }
+.mid_button {
+    width: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 5%;
+    background: #FFFFFF;
+    border: 1px solid #E3E3E4;
+    box-sizing: border-box;
+    background-image: url(../assets/ic_arrow.png);
+    background-repeat: no-repeat;
+    background-position: 20%;
+    border-left: none;
+    cursor: pointer;
+}
 
-    .mid_input:focus {
-        outline: none;
-        background: #FFFFFF;
-        border: 1px solid #E3E3E4;
-        box-sizing: border-box;
-        box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
-        border-left: 4px solid #4066A5;
-        background-image: url(../assets/ic_arrow.png);
-        background-repeat: no-repeat;
-        background-position: 95%;
-        border-left: 4px solid #4066A5;
-    }
+.mid_input:focus + .mid_button {
+    color: #6A707B;
+    background: #FFFFFF;
+    border: 1px solid #E3E3E4;
+    border-left: none;
+    box-sizing: border-box;
+    box-shadow: 30px 30px 40px rgba(19, 24, 33, 0.06);
+    background-image: url(../assets/ic_arrow.png);
+    background-repeat: no-repeat;
+    background-position: 20%;
+}
+
+.mid_input:focus {
+    outline: none;
+    background: #FFFFFF;
+    border: 1px solid #E3E3E4;
+    border-left: 4px solid #4066A5;
+    border-right: none;
+    box-sizing: border-box;
+    box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+}
+
+.mid_inputArea:hover .mid_button {
+    color: #6A707B;
+    background: #FFFFFF;
+    border: 1px solid #4066A5;
+    border-left: none;
+    box-sizing: border-box;
+    box-shadow: 30px 30px 40px rgba(19, 24, 33, 0.06);
+    background-image: url(../assets/ic_arrow_hover.png);
+    background-repeat: no-repeat;
+    background-position: 20%;
+}
+
+.mid_inputArea:hover .mid_input {
+    width: 90%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 5%;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #6A707B;
+    background: #FFFFFF;
+    border: 1px solid #4066A5;
+    border-left: 4px solid #4066A5;
+    border-right: none;
+    box-sizing: border-box;
+    box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+}
+
+.mid_errMessage {
+    width: 90%;
+    word-break: break-word;
+    align-self: flex-start;
+    height: 2em;
+    visibility: visible;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 150%;
+    color: #B80808;
+}
 
 .mid_agreement {
     width: 100%;
-    margin-top: 10%;
     display: flex;
     flex-direction: row;
     align-self: flex-start;
+    margin-bottom: 10%;
     margin-left: 10%;
 }
 
@@ -225,7 +293,7 @@
     }
 
 .mid_line {
-    margin-top: 10%;
+    margin-top: 0%;
     border: 1px solid #E3E3E4;
     width: 80%;
 }
@@ -407,6 +475,7 @@
         align-items: center;
         background: url(../assets/image_summer.png);
         background-position: 50% 100%;
+        background-size: cover;
     }
 
     .mid_header {
@@ -418,6 +487,13 @@
         color: #131821;
         margin-left: 5%;
         margin-top: 10%;
+    }
+
+    .mid_prize {
+        content: url(../assets/Prize.png);
+        align-self: flex-start;
+        margin-left: 5%;
+        margin-top: 5%;
     }
 
     .mid_paragraph {
@@ -446,9 +522,50 @@
         color: #6A707B;
     }
 
+    .mid_inputArea {
+        width: 90%;
+        margin-left: 5%;
+        align-self: flex-start;
+    }
+
     .mid_input {
         width: 90%;
-        align-self: center;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .mid_button {
+        width: 10%;
+        background-position: left;
+    }
+
+    .mid_inputArea:hover .mid_button {
+        color: #6A707B;
+        background: #FFFFFF;
+        border: 1px solid #E3E3E4;
+        border-left: none;
+        box-sizing: border-box;
+        box-shadow: 30px 30px 40px rgba(19, 24, 33, 0.06);
+        background-image: url(../assets/ic_arrow.png);
+        background-repeat: no-repeat;
+        background-position: left;
+    }
+
+    .mid_inputArea:hover .mid_input {
+        outline: none;
+        background: #FFFFFF;
+        border: 1px solid #E3E3E4;
+        border-left: 4px solid #4066A5;
+        border-right: none;
+        box-sizing: border-box;
+        box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .mid_errMessage {
+        margin-left: 5%;
+        margin-bottom: 1%;
     }
 
     .mid_agreement {
@@ -557,7 +674,12 @@
         align-items: center;
         background: url(../assets/image_summer.png);
         background-repeat: no-repeat;
-        object-fit: cover;
+        background-size: cover;
+    }
+
+    .mid_prize {
+    margin-top:2%;
+    margin-left: 5%;
     }
 
     .mid_header {
@@ -599,12 +721,50 @@
         color: #6A707B;
     }
 
+    .mid_inputArea {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2%;
+    align-self: flex-start;
+    }
+
+        .mid_inputArea:hover .mid_button {
+            color: #6A707B;
+            background: #FFFFFF;
+            border: 1px solid #E3E3E4;
+            border-left: none;
+            box-sizing: border-box;
+            box-shadow: 30px 30px 40px rgba(19, 24, 33, 0.06);
+            background-image: url(../assets/ic_arrow.png);
+            background-repeat: no-repeat;
+            background-position: 20%;
+        }
+
+        .mid_inputArea:hover .mid_input {
+            outline: none;
+            background: #FFFFFF;
+            border: 1px solid #E3E3E4;
+            border-left: 4px solid #4066A5;
+            border-right: none;
+            box-sizing: border-box;
+            box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+            padding-top: 2%;
+            padding-bottom: 2%;
+        }
+
     .mid_input {
         width: 90%;
-        align-self: center;
-        margin-top: 1%;
         padding-top:2%;
         padding-bottom:2%;
+    }
+
+    .mid_button {
+    width: 10%;
+    }
+
+    .mid_errMessage {
+        margin-left: 5%;
+        margin-bottom: 1%;
     }
 
     .mid_agreement {
