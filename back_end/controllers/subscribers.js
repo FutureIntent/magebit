@@ -3,8 +3,9 @@ const router = express.Router();
 const Subscriber = require('./../models/subscriber_model.js');
 const subscriber_validation = require('./../validation/subscriber_validation.js');
 const Email_list = require('./../models/subscriber_email_model.js');
+const { sequelize } = require('./../database/database_connection.js');
 
-//////////////////////////////////////////////////// CREATE TABLE(only test task's controller) ////////////////////////////////////////////
+//////////////////////////////////////////////////// CREATE TABLE(only test task's controller) ////////////////////////////////////////////////////////
 router.post('/create_sync_table', async (req, res) => {
 
     //create new Subscriber table
@@ -29,7 +30,7 @@ router.post('/create_sync_table', async (req, res) => {
 
 });
 
-//////////////////////////////////////////////////// VALIDATE AND STORE SUBSCRIBER IN THE DATABASE /////////////////////////////////////
+//////////////////////////////////////////////////// VALIDATE AND STORE SUBSCRIBER IN THE DATABASE /////////////////////////////////////////////////
 router.post('/new', async (req, res) => {
 
     //request's body
@@ -77,46 +78,79 @@ router.post('/new', async (req, res) => {
     
 });
 
-/////////////////////////////////////////////////////// GET LIST OF ALL SUBSCRIBERS AND FILTER THEM /////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////// GET LIST OF SUBSCRIBERS AND FILTER THEM /////////////////////////////////////////////////////////////
 router.get('/show/', async (req, res) => {
 
-    const filter = req.query.filter;
-    let data = null;
+    //get every possible queue or use default value
+    const email = req.query.email || ''
+    const order = req.query.order || 'createdAt'
+    const direction = req.query.direction || 'DESC'
 
-    //filter's conditions(name, date and default is date)
-    switch (filter) {
 
-        case 'name':
-            data = await Subscriber.findAll({
-                order: [
-                    ['email', 'ASC']
-                ]
-            });
-        break;
+    try {
 
-        case 'date':
-            data = await Subscriber.findAll({
-                order: [
-                    ['createdAt', 'DESC']
-                ]
-            });
-        break;
+        //custom query for: filter, sort, order operations
+        const [results, metadata] = await sequelize.query(`SELECT * from subscribers WHERE email LIKE "%${email}" ORDER BY ${order} ${direction}`);
 
-        default:
-            data = await Subscriber.findAll({
-                order: [
-                    ['createdAt', 'DESC']
-                ]
-            });
-         
+        //success status
+        res.status(200).json({ status: true, result: results });
+
+    } catch (err) {
+
+        //fail status
+        res.status(400).json({ status: false, message: err.message });
+
     }
 
-    //check if data is existent
-    if (!data) return res.status(400).json({ status: false, message: 'Unable to retrieve data from the server'})
+});
 
-    //successful fetch
-    return res.status(200).json({ status: true, result: data });
+///////////////////////////////////////////////////// DELETE LIST OF EMAILS FROM DATABASE /////////////////////////////////////////////////////////////
+router.delete('/delete', async (req, res) => {
 
+    //store subscription's ids in array ## json format - {emailsToDelete: [1,2,...n]}
+    const emailsIDArr = req.body.emailsToDelete;
+
+    //get every email provider from database
+    const providers = await Email_list.findAll({
+        attributes: ['uniqueEmail']
+    });
+
+    //destroy subscriptions
+    const numberOFDestoyedRows = await Subscriber.destroy({
+        where: {
+            id: emailsIDArr
+        }
+    });
+
+    if (numberOFDestoyedRows == 0 || !numberOFDestoyedRows) return res.status(400).json({status: false, message: "Nothing was deleted"});
+
+    //iterate all provider in array
+
+   /* 
+      providers.map((provider) => {
+        console.log(provider.uniqueEmail);
+    });
+   */
+
+    //check if email provider exists in subscriber's table and destroy email provider if not
+
+    for (let i = 0; i < providers.length; i++) {
+
+        [results, metadata] = await sequelize.query(`SELECT email from subscribers where email like '%${providers[i].uniqueEmail}'`);
+
+        //if subscriber with iterated provider is not existent anymore then destroy provider from email_lists table
+        if (results.length == 0) {
+            await Email_list.destroy({
+                where: {
+                    uniqueEmail: providers[i].uniqueEmail
+                }
+            });
+        }
+    }
+
+    return res.status(200).json({ status: true, message: `Number of removed subscriptions: ${numberOFDestoyedRows}`});
+
+    console.log(test);
 });
 
 module.exports = router;
