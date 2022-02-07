@@ -1,12 +1,15 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useRef, useContext } from 'react';
 import styles from './../css/subscription.module.css';
 import validate from './../scripts/subscription_validation.js';
+import { URLContext } from './../context/back_end_url.js';
 
 function Subscription() {
 
+	const BackEndURL = useContext(URLContext);
+
 	useEffect(() => {
-		console.log(validation);
-		console.log("Subscription status: " + subscribe);
+		//console.log(validation);
+		//console.log("Subscription status: " + subscribe);
 	});
 
 	//store user input
@@ -41,8 +44,8 @@ function Subscription() {
 	//validation
 	const validation = useMemo(() => validate(input.email, input.checkbox), [input]);
 
-	//validate user input and fetch data
-	function handleSubmit(event) {
+	//validate user's input by FRONT-END!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	/*function handleSubmit(event) {
 
 		const data = validation;
 
@@ -54,7 +57,38 @@ function Subscription() {
 			setSubscribe(false);
 		}
 		event.preventDefault();
+	}*/
+
+	//fetch, validate and store user's input by BACK-END!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	function handleSubmit(event) {
+
+		event.preventDefault();
+
+		if (input.checkbox == false) return setErrMessage("You must accept the terms and conditions");
+
+		//fetch data
+		fetch(`${BackEndURL}/subscriber/new`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				email: input.email
+			})
+		})
+			.then(res => res.json())
+			.then(res => {
+				if (res.status == true) {
+					setErrMessage(null);
+					setSubscribe(true)
+				} else {
+					setErrMessage(res.message);
+				}
+			})
+			.catch(err => setErrMessage("Subscription error"))
 	}
+
+
 
 	//conditional styles
 	const redBorder = useRef();

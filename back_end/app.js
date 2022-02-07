@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
+
 //import config
 require("dotenv").config();
 
@@ -15,6 +17,15 @@ const subscriber = require('./controllers/subscribers.js');
 
 //json parser
 app.use(express.json());
+
+//CORS
+app.use(cors(
+    {
+        origin: process.env.front_end_URL,
+        methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH'],
+        credentials: true
+    }
+));
 
 //controller paths
 app.use('/subscriber/', subscriber);
