@@ -95,8 +95,13 @@ router.get('/show/', async (req, res) => {
         //custom query for: filter, sort, order operations
         const [results, metadata] = await sequelize.query(`SELECT * from subscribers WHERE email LIKE "%${email}" ORDER BY ${order} ${direction}`);
 
+        //get every email provider from database
+        const providers = await Email_list.findAll({
+            attributes: ['uniqueEmail']
+        });
+
         //success status
-        res.status(200).json({ status: true, result: results });
+        res.status(200).json({ status: true, provider: providers, result: results });
 
     } catch (err) {
 
@@ -153,7 +158,6 @@ router.delete('/delete', async (req, res) => {
 
     return res.status(200).json({ status: true, message: `Number of removed subscriptions: ${numberOFDestoyedRows}`});
 
-    console.log(test);
 });
 
 module.exports = router;
