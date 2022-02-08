@@ -16,7 +16,7 @@
 to create 2 tables for storing subscriptions and unique emails;
 
 ### TEST
-4. In browser enter your front-end url, e.g. ("http://localhost:3000/"). Enter various emails and subscribe;\ 
+4. In browser enter your front-end url, e.g. ("http://localhost:3000/"). Enter various emails and subscribe;\
 4.1. To test the table task enter ("http://localhost:3000/subscribed") and try different buttons;
 
 ## LIBRARIES/FRAMEWORKS
