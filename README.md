@@ -3,7 +3,7 @@
 ### FRONT-END
 1. Open an instance of terminal and locate project's root directory, e.g. `cd magebit` ;\
 1.1. `npm install` (install node packages);\
-1.2. locate './magebit/src/context/back_end_url.js' directory and change backend's url;\
+1.2. Locate './magebit/src/context/back_end_url.js' directory and change backend's url;\
 1.3. `npm start`;
 
 ### BACK-END
