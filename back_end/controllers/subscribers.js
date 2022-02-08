@@ -35,7 +35,7 @@ router.post('/new', async (req, res) => {
 
     //request's body
     const data = req.body;
-    const email = data.email;
+    let email = data.email;
 
     //validate email input and check if not colombian??
     const validation = await subscriber_validation.validate(data);
@@ -43,7 +43,7 @@ router.post('/new', async (req, res) => {
     if (validation.error) return res.status(300).json({ status: false, message: validation.error.details[0].message });
 
     //standartise case
-    email.toLowerCase();
+    email = email.toLowerCase();
 
     //checks if subscriber's email is unique
     const exists = await Subscriber.findOne({
