@@ -5,9 +5,9 @@
     "\\back_end\\controllers",
     "\\src",
     "\\src\\context",
-    "\\src\\pages",
-    "\\src\\scripts"
+    "\\src\\css",
+    "\\src\\pages"
   ],
-  "SelectedNode": "\\src\\pages\\subscribed.js",
+  "SelectedNode": "\\back_end\\controllers\\subscribers.js",
   "PreviewInSolutionExplorer": false
 }

@@ -1,18 +1,14 @@
 /* medium-large, large, extra large (desktop HD screens, desktop full HD screens, wide ultra HD) */
 .background {
     min-width: 100%;
-    max-width: 100%;
     min-height: 100vh;
-    max-height: 100vh;
     display: flex;
     flex-direction: row-reverse;
 }
 
 .column_1 {
     min-width: 40%;
-    max-width: 40%;
     min-height: 100vh;
-    max-height: 100vh;
     background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
     display: flex;
     flex-direction: column;
@@ -21,9 +17,7 @@
 
 .column_2 {
     min-width: 60%;
-    max-width: 60%;
     min-height: 100vh;
-    max-height: 100vh;
     background-image: url(../assets/image_summer.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -413,18 +407,14 @@
 
     .background {
         min-width: 100%;
-        max-width: 100%;
         min-height: 100vh;
-        max-height: 100vh;
         display: flex;
     }
 
 
     .column_1 {
         min-width: 100%;
-        max-width: 100%;
         min-height: 100vh;
-        max-height: 100vh;
         display: flex;
         flex-direction: column;
     }
@@ -443,7 +433,6 @@
 
     .header {
         min-width: 90%;
-        max-width: 90%;
         height: 7vh;
         margin-top: 1%;
         margin-bottom: 1%;
@@ -456,7 +445,6 @@
     }
 
     .nav_text {
-        margin-left: 10%;
         font-family: Arial;
         font-style: normal;
         font-weight: normal;
@@ -467,9 +455,7 @@
 
     .mid_wrapper {
         min-width: 100%;
-        max-width: 100%;
         min-height: 100vh;
-        max-height: 100vh;
         margin-top: 0%;
         display: flex;
         justify-content: center;
@@ -613,18 +599,14 @@
 
     .background {
         min-width: 100%;
-        max-width: 100%;
         min-height: 100vh;
-        max-height: 100vh;
         display: flex;
     }
 
 
     .column_1 {
         min-width: 100%;
-        max-width: 100%;
         min-height: 100vh;
-        max-height: 100vh;
         display: flex;
         flex-direction: column;
     }
@@ -643,7 +625,6 @@
 
     .header {
         min-width: 95%;
-        max-width: 95%;
         margin-top: 2%;
         margin-bottom: 2%;
         align-items: center;
@@ -666,9 +647,7 @@
 
     .mid_wrapper {
         min-width: 100%;
-        max-width: 100%;
-        min-height: 100vh;
-        max-height: 100vh;
+        min-height: 100%;
         margin-top: 0%;
         display: flex;
         justify-content: center;
@@ -708,7 +687,6 @@
 
     .mid_section {
         width: 90%;
-        border-radius: 15px;
         background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
     }
 
@@ -814,7 +792,6 @@
 
     .background {
         min-width: 100%;
-        max-width: 100%;
         display: flex;
         flex-direction: column;
     }
@@ -822,7 +799,6 @@
 
     .column_1 {
         min-width: 100%;
-        max-width: 100%;
         display: flex;
         flex-direction: column;
     }
@@ -841,7 +817,6 @@
 
     .header {
         min-width: 95%;
-        max-width: 95%;
         margin-top: 2%;
         margin-bottom: 2%;
         align-items: center;
@@ -864,7 +839,6 @@
 
     .mid_wrapper {
         min-width: 100%;
-        max-width: 100%;
         margin-top: 0%;
         display: flex;
         flex-direction: column;
@@ -905,7 +879,6 @@
 
     .mid_section {
         width: 90%;
-        border-radius: 15px;
         background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
         margin: 2% 0%;
     }
@@ -1011,18 +984,14 @@
 
     .background {
         min-width: 100%;
-        max-width: 100%;
         min-height: 100vh;
-        max-height: 100vh;
         display: flex;
     }
 
 
     .column_1 {
         min-width: 100%;
-        max-width: 100%;
         min-height: 100vh;
-        max-height: 100vh;
         display: flex;
         flex-direction: column;
     }
@@ -1041,7 +1010,6 @@
 
     .header {
         min-width: 95%;
-        max-width: 95%;
         margin-top: 2%;
         margin-bottom: 2%;
         align-items: center;
@@ -1064,9 +1032,7 @@
 
     .mid_wrapper {
         min-width: 100%;
-        max-width: 100%;
         min-height: 100vh;
-        max-height: 100vh;
         margin-top: 0%;
         display: flex;
         justify-content: center;
@@ -1106,7 +1072,6 @@
 
     .mid_section {
         width: 90%;
-        border-radius: 15px;
         background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
     }
 
